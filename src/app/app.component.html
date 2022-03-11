@@ -1,5 +1,5 @@
 <app-header class="header"></app-header>
-<app-filtering-criteria hidden></app-filtering-criteria>
+<app-filtering-criteria class="filters" [hidden] = "respService.showFilters"></app-filtering-criteria>
 <main class="main">
-<app-search-results class="card-list"></app-search-results>
+<app-search-results class="card-list" [hidden] = "respService.showResps"></app-search-results>
 </main>

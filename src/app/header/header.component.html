@@ -1,7 +1,7 @@
 <div class="header-filter">
   <div class="header-logo"></div>
   <input type="text" class="header-search-input">
-  <button (click)="respService.showResps = true" class="header-search-button button-blue">search</button>
-  <button class="header-sort-button page-button"></button>
+  <button (click)="respService.showResps = !respService.showResps" class="header-search-button button-blue">search</button>
+  <button (click)="respService.showFilters = !respService.showFilters" class="header-sort-button page-button"></button>
 </div>
 <div class="header-authorization">Your name</div>

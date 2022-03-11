@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ResponseManagementService } from './response-management.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-Yt-client-app';
+  constructor( public respService:ResponseManagementService){
+
+  }
 }
