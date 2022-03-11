@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ResponseVidInt } from 'src/app/shared/response-vid-model';
 
 @Component({
   selector: 'app-search-item',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchItemComponent implements OnInit {
 
-  constructor() { }
+  @Input ('vidObj') vidObj !: ResponseVidInt
+  imgUrl:string
+  constructor() {
+this.imgUrl = ''
+   }
 
   ngOnInit(): void {
+    this.imgUrl = this.vidObj.snippet.thumbnails.high.url
   }
 
 }

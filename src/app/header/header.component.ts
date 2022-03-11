@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponseManagementService } from '../response-management.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public respService: ResponseManagementService) {
+   }
 
   ngOnInit(): void {
   }

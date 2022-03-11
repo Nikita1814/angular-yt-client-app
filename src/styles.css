@@ -68,7 +68,7 @@ body {
   border-bottom: #2f80ed 5px solid;
   width: 263px;
   height: 327px;
-  padding: 20px;
+  padding: 10px;
   background-color:#E5E5E5;
 }
 .page-button{
@@ -83,7 +83,8 @@ width:30px;
 }
 .card-s-img{
   background-image: url(assets/caption.png);
-  background-size: contain;
+  background-size: cover;
+  background-repeat:no-repeat;
   width:223px;
   height:123px;
 }
