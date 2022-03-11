@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family:Roboto
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 8vh;
+  padding:0% 5%;
+}
+.header-filter {
+  justify-self: center;
+  width: 500px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  margin-left:auto;
+}
+.header-logo {
+  background-image: url(assets/logo.svg);
+  width:50px;
+  height:50px;
+}
+.header-sort-button {
+  background-image: url(assets/search_settings.svg);
+}
+
+.header-authorization{
+  margin-left:auto
+}
+.button-blue {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #2f80ed;
+  border-radius: 5%;
+
+}
+.header-search-input {
+  width: 396px;
+  height: 25px;
+}
+.main {
+  margin: 0 auto;
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.card-s {
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  border-radius: 5%;
+  border-bottom: #2f80ed 5px solid;
+  width: 263px;
+  height: 327px;
+  padding: 20px;
+  background-color:#E5E5E5;
+}
+.page-button{
+height:30px;
+width:30px;
+}
+.card-s-info{
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+
+}
+.card-s-img{
+  background-image: url(assets/caption.png);
+  background-size: contain;
+  width:223px;
+  height:123px;
+}
+.card-s-more{
+  width:120px;
+  height:32px
+}
