@@ -5,6 +5,7 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { FilteringCriteriaComponent } from '../core/components/filtering-criteria/filtering-criteria.component';
 import { WordFilterPipe } from './pipes/word-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { SearchItemDetailedComponent } from './pages/search-item-detailed/search-item-detailed.component';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     SearchResultsComponent,
     SearchItemComponent,
     FilteringCriteriaComponent,
-    WordFilterPipe
+    WordFilterPipe,
+    SearchItemDetailedComponent
   ],
   exports:[
     SearchResultsComponent,
