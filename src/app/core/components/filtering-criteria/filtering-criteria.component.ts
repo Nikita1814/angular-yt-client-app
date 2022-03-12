@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponseManagementService } from '../response-management.service';
-import { ResponseVidInt } from '../shared/response-vid-model';
+import { ResponseManagementService } from '../../../youtube/services/response-management.service';
+import { ResponseVidInt } from '../../../youtube/models/response-vid-model';
 
 @Component({
   selector: 'app-filtering-criteria',

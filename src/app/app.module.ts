@@ -3,25 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
-import { SearchItemComponent } from './search-results/search-item/search-item.component';
-import { FilteringCriteriaComponent } from './filtering-criteria/filtering-criteria.component';
-import { WordFilterPipe } from './pipes/word-filter.pipe';
+import { WordFilterPipe } from './youtube/pipes/word-filter.pipe';
+import { YoutubeModule } from './youtube/youtube.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SearchResultsComponent,
-    SearchItemComponent,
-    FilteringCriteriaComponent,
-    WordFilterPipe
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CoreModule,
+    YoutubeModule
   ],
     providers: [WordFilterPipe],
   bootstrap: [AppComponent]

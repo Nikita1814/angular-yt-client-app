@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ResponseVidInt } from '../shared/response-vid-model';
+import { ResponseVidInt } from '../models/response-vid-model';
 
 @Pipe({
   name: 'wordFilter',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponseManagementService } from '../response-management.service';
+import { ResponseManagementService } from '../../../youtube/services/response-management.service';
 
 @Component({
   selector: 'app-header',

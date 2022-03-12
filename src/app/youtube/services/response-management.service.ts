@@ -1,9 +1,9 @@
 import {Injectable, Optional } from '@angular/core';
 
-import { WordFilterPipe } from './pipes/word-filter.pipe';
-import responses from './responses';
-import { ResponseInt } from './shared/response-model';
-import { ResponseVidInt } from './shared/response-vid-model';
+import { WordFilterPipe } from '../pipes/word-filter.pipe';
+import responses from '../../responses';
+import { ResponseInt } from '../models/response-model';
+import { ResponseVidInt } from '../models/response-vid-model';
 
 @Injectable({
   providedIn: 'root'

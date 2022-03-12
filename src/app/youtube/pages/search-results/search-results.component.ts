@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponseManagementService } from '../response-management.service';
-import { ResponseVidInt } from '../shared/response-vid-model';
+import { ResponseManagementService } from '../../services/response-management.service';
+import { ResponseVidInt } from '../../models/response-vid-model';
 
 @Component({
   selector: 'app-search-results',

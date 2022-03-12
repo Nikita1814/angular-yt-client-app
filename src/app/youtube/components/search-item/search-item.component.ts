@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ResponseVidInt } from 'src/app/shared/response-vid-model';
+import { ResponseVidInt } from 'src/app/youtube/models/response-vid-model';
 
 @Component({
   selector: 'app-search-item',
