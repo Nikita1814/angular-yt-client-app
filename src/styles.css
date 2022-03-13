@@ -173,6 +173,8 @@ width:30px;
     .card-l-img{
       width:730px;
       height:100%;
+      background-repeat: no-repeat;
+      background-size:contain
     }
     .card-l-other{
       width:630px;
