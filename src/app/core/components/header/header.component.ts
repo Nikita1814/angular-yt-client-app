@@ -9,15 +9,16 @@ import { ResponseManagementService } from '../../../youtube/services/response-ma
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  searchString:string
   constructor(
     public respService: ResponseManagementService,
     public router: Router,
     public authService: AuthService
-  ) {}
+  ) {
+    this.searchString = ''
+  }
   submitSearch() {
-    if (this.authService.loggedIn === true) {
-      this.router.navigate(['youtube']);
-    }
+    this.respService.makeSearchQuery(this.searchString)
   }
 
   ngOnInit(): void {}

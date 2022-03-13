@@ -1,6 +1,6 @@
 <div class="header-filter">
   <div class="header-logo"></div>
-  <input type="text" class="header-search-input">
+  <input [(ngModel)]="searchString" type="text" class="header-search-input">
   <button (click)="submitSearch()" class="header-search-button button-blue">search</button>
   <button (click)="respService.showFilters = !respService.showFilters" class="header-sort-button page-button"></button>
 </div>

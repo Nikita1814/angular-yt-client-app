@@ -21,7 +21,6 @@ export class SearchItemDetailedComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
     console.log(this.item)
     console.log(this.itemId)
     console.log(this.respService.filtered)
