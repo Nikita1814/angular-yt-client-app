@@ -49,13 +49,17 @@ body {
 }
 .main {
   margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
 }
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 30px;
 }
 .card-s {
@@ -185,3 +189,7 @@ width:30px;
       display: flex;
       justify-content: space-around;
     }
+
+   .hideElem{
+     display: none !important;
+   }

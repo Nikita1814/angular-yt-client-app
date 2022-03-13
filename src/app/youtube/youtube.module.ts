@@ -6,6 +6,8 @@ import { FilteringCriteriaComponent } from '../core/components/filtering-criteri
 import { WordFilterPipe } from './pipes/word-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { SearchItemDetailedComponent } from './pages/search-item-detailed/search-item-detailed.component';
+import { YtRoutingModule } from './yt-routing.module';
+
 
 
 
@@ -24,7 +26,8 @@ import { SearchItemDetailedComponent } from './pages/search-item-detailed/search
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    YtRoutingModule,
   ]
 })
 export class YoutubeModule { }

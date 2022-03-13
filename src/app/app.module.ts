@@ -18,7 +18,6 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     FormsModule,
     CoreModule,
-    YoutubeModule
   ],
     providers: [WordFilterPipe],
   bootstrap: [AppComponent]
