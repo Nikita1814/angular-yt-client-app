@@ -7,23 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { SearchItemDetailedComponent } from './pages/search-item-detailed/search-item-detailed.component';
 import { YtRoutingModule } from './yt-routing.module';
 
-
-
 @NgModule({
   declarations: [
     SearchResultsComponent,
     SearchItemComponent,
     WordFilterPipe,
-    SearchItemDetailedComponent
+    SearchItemDetailedComponent,
   ],
-  exports:[
-    SearchResultsComponent,
-    SearchItemComponent,
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    YtRoutingModule,
-  ]
+  exports: [SearchResultsComponent, SearchItemComponent],
+  imports: [CommonModule, FormsModule, YtRoutingModule],
 })
-export class YoutubeModule { }
+export class YoutubeModule {}

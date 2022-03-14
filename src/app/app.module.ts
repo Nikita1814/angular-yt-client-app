@@ -8,19 +8,15 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-    providers: [WordFilterPipe],
-  bootstrap: [AppComponent]
+  providers: [WordFilterPipe],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -4,14 +4,13 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { SearchItemDetailedComponent } from './pages/search-item-detailed/search-item-detailed.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
 
-
 const routes: Routes = [
-{path:'', component:SearchResultsComponent },
-{path:'vid/:id', component:SearchItemDetailedComponent}
+  { path: '', component: SearchResultsComponent },
+  { path: 'vid/:id', component: SearchItemDetailedComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class YtRoutingModule  { }
+export class YtRoutingModule {}

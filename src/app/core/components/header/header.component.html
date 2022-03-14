@@ -4,4 +4,5 @@
   <button (click)="submitSearch()" class="header-search-button button-blue">search</button>
   <button (click)="respService.showFilters = !respService.showFilters" class="header-sort-button page-button"></button>
 </div>
-<div (click)="authService.signOut()" class="header-authorization">{{authService.user?.mail || 'not logged in'}}</div>
+<div (click)="authService.signOut()" class="header-authorization"><div class="header-auth-icon"></div><p>{{authService.user?.mail || 'not logged in'}}</p></div>
+

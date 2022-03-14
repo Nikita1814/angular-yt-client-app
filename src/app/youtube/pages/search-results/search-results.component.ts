@@ -5,16 +5,13 @@ import { ResponseVidInt } from '../../models/response-vid-model';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.css']
+  styleUrls: ['./search-results.component.css'],
 })
 export class SearchResultsComponent implements OnInit {
-  vids: ResponseVidInt[]
+  vids: ResponseVidInt[];
   constructor(public respService: ResponseManagementService) {
-    this.vids = respService.filtered
-   }
-
-  ngOnInit(): void {
-
+    this.vids = respService.filtered;
   }
 
+  ngOnInit(): void {}
 }

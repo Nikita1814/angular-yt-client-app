@@ -1,5 +1,5 @@
-export interface UserObjInt{
-mail: string;
-password:string;
-authToken:string
+export interface UserObjInt {
+  mail: string;
+  password: string;
+  authToken: string;
 }

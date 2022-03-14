@@ -3,7 +3,10 @@ import { Injectable, Optional } from '@angular/core';
 import { WordFilterPipe } from '../pipes/word-filter.pipe';
 import responses from '../../responses';
 import { ResponseInt, SearchResponseInt } from '../models/response-model';
-import { ResponseVidInt, SearchResponseVidInt } from '../models/response-vid-model';
+import {
+  ResponseVidInt,
+  SearchResponseVidInt,
+} from '../models/response-vid-model';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -55,13 +58,12 @@ export class ResponseManagementService {
       const options = {
         headers: new HttpHeaders({ 'Content-Type': 'applicaiton/json' }),
       };
-      let idArr:string[] = [];
-      let ids = ''
+      let idArr: string[] = [];
+      let ids = '';
       const search = this.http.get<SearchResponseInt>(
         `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&type=video&maxResults=15&q=${query}&part=snippet`,
         options
       );
-
 
       search.subscribe({
         next: (res) => {
@@ -70,9 +72,9 @@ export class ResponseManagementService {
           res.items.forEach((item) => {
             idArr.push(item.id.videoId);
           });
-          console.log(idArr)
-          ids = idArr.join(',')
-          console.log(ids)
+          console.log(idArr);
+          ids = idArr.join(',');
+          console.log(ids);
           const getStats = this.http.get<ResponseInt>(
             `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&id=${ids}&part=snippet,statistics`,
             options
