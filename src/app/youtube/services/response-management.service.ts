@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class ResponseManagementService {
-  resps: ResponseInt | null;
+  resps: ResponseInt
   filtered: ResponseVidInt[];
   items: ResponseVidInt[];
   showResps: boolean;
@@ -28,7 +28,7 @@ export class ResponseManagementService {
     public authService: AuthService,
     private router: Router
   ) {
-    this.resps = null;
+    this.resps = responses
     this.items = [];
     this.filtered = [];
     this.showResps = false;
