@@ -131,18 +131,18 @@ body {
   justify-content: center;
 }
 
-.page-404 {
+.not-found-page{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.message-404 {
+.not-found-message{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.icon-404 {
+.not-found-icon {
   width: 100px;
   height: 100px;
   background-image: url(assets/404.svg);
