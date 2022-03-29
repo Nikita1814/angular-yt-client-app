@@ -36,21 +36,18 @@ export class ResponseManagementService {
     this.filterString = '';
   }
   filterItems(func?: (a: ResponseVidInt, b: ResponseVidInt) => number): void {
-    if (arguments.length > 0) {
+    if (func) {
       this.filtered = this.items.sort(func);
       this.filtered = this.wordFilter.transform(
         this.filtered,
         this.filterString
       );
-      console.log(this.filtered);
-      console.log('1');
     } else {
       this.filtered = this.items;
       this.filtered = this.wordFilter.transform(
         this.filtered,
         this.filterString
       );
-      console.log(arguments.length);
     }
   }
   makeSearchQuery(query: string) {
@@ -67,21 +64,17 @@ export class ResponseManagementService {
 
       search.subscribe({
         next: (res) => {
-          console.log(res);
 
           res.items.forEach((item) => {
             idArr.push(item.id.videoId);
           });
-          console.log(idArr);
           ids = idArr.join(',');
-          console.log(ids);
           const getStats = this.http.get<ResponseInt>(
             `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&id=${ids}&part=snippet,statistics`,
             options
           );
           getStats.subscribe({
             next: (result) => {
-              console.log(result);
               this.resps = result;
               this.items = result.items;
               this.filtered = this.items;
