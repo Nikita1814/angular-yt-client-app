@@ -17,7 +17,4 @@ export class SearchItemComponent implements OnInit {
   ngOnInit(): void {
     this.imgUrl = this.vidObj.snippet.thumbnails.high.url;
   }
-  showDetailed() {
-    this.router.navigateByUrl(`youtube/vid/${this.vidObj.id}`);
-  }
 }
