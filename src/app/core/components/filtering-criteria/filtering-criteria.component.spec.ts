@@ -9,9 +9,8 @@ describe('FilteringCriteriaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FilteringCriteriaComponent ]
-    })
-    .compileComponents();
+      declarations: [FilteringCriteriaComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

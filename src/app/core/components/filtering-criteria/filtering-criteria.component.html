@@ -1,7 +1,23 @@
 <div class="filters-block">
   <p>sorting by</p>
-  <div (click)="respService.filterItems(sortFuncs['date'])" class="filter-btn button-blue">date</div>
-  <div (click)="respService.filterItems(sortFuncs['views'])" class="filter-btn button-blue">views</div>
-  <div (click)="respService.filterItems()" class="filter-btn button-blue">phrase</div>
-  <input [(ngModel)]="respService.filterString" class="filter-input" type="text">
+  <div
+    (click)="respService.filterItems(sortFuncs['date'])"
+    class="filter-btn button-blue"
+  >
+    date
+  </div>
+  <div
+    (click)="respService.filterItems(sortFuncs['views'])"
+    class="filter-btn button-blue"
+  >
+    views
+  </div>
+  <div (click)="respService.filterItems()" class="filter-btn button-blue">
+    phrase
+  </div>
+  <input
+    [(ngModel)]="respService.filterString"
+    class="filter-input"
+    type="text"
+  />
 </div>

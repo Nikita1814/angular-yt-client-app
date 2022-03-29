@@ -23,7 +23,5 @@ export class SearchItemDetailedComponent implements OnInit {
     this.vidDate = new Date(this.item.snippet.publishedAt);
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 }

@@ -1,8 +1,15 @@
 <div class="header-filter">
   <div class="header-logo"></div>
-  <input [(ngModel)]="searchString" type="text" class="header-search-input">
-  <button (click)="submitSearch()" class="header-search-button button-blue">search</button>
-  <button (click)="respService.showFilters = !respService.showFilters" class="header-sort-button page-button"></button>
+  <input [(ngModel)]="searchString" type="text" class="header-search-input" />
+  <button (click)="submitSearch()" class="header-search-button button-blue">
+    search
+  </button>
+  <button
+    (click)="respService.showFilters = !respService.showFilters"
+    class="header-sort-button page-button"
+  ></button>
 </div>
-<div (click)="authService.signOut()" class="header-authorization"><div class="header-auth-icon"></div><p>{{authService.user?.mail || 'not logged in'}}</p></div>
-
+<div (click)="authService.signOut()" class="header-authorization">
+  <div class="header-auth-icon"></div>
+  <p>{{ authService.user?.mail || "not logged in" }}</p>
+</div>

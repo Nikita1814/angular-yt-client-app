@@ -1,5 +1,8 @@
 <app-header class="header"></app-header>
-<app-filtering-criteria class="filters" [ngClass]="{'hide-elem': !respService.showFilters}"></app-filtering-criteria>
+<app-filtering-criteria
+  class="filters"
+  [ngClass]="{ 'hide-elem': !respService.showFilters }"
+></app-filtering-criteria>
 <main class="main">
   <router-outlet></router-outlet>
 </main>
