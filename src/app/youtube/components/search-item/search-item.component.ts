@@ -6,7 +6,7 @@ import { ResponseVidInt } from 'src/app/youtube/models/response-vid-model';
   selector: 'app-search-item',
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.css'],
-  encapsulation:ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class SearchItemComponent implements OnInit {
   @Input('vidObj') vidObj!: ResponseVidInt;

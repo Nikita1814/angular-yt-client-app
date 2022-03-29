@@ -4,9 +4,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class NotFoundComponent {
   constructor() {}
-
 }

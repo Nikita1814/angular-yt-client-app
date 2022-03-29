@@ -6,13 +6,11 @@ import { ResponseVidInt } from '../../models/response-vid-model';
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css'],
-  encapsulation:ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class SearchResultsComponent {
   vids: ResponseVidInt[];
   constructor(public respService: ResponseManagementService) {
     this.vids = respService.filtered;
   }
-
-
 }

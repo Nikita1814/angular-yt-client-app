@@ -11,12 +11,12 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
-
+import { map, switchMap, catchError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class ResponseManagementService {
-  resps: ResponseInt
+  resps: ResponseInt;
   filtered: ResponseVidInt[];
   items: ResponseVidInt[];
   showResps: boolean;
@@ -28,7 +28,7 @@ export class ResponseManagementService {
     public authService: AuthService,
     private router: Router
   ) {
-    this.resps = responses
+    this.resps = responses;
     this.items = [];
     this.filtered = [];
     this.showResps = false;
@@ -52,38 +52,26 @@ export class ResponseManagementService {
   }
   makeSearchQuery(query: string) {
     if (this.authService.loggedIn === true) {
-      const options = {
-        headers: new HttpHeaders({ 'Content-Type': 'applicaiton/json' }),
-      };
-      let idArr: string[] = [];
-      let ids = '';
-      const search = this.http.get<SearchResponseInt>(
-        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&type=video&maxResults=15&q=${query}&part=snippet`,
-        options
-      );
-
-      search.subscribe({
-        next: (res) => {
-
-          res.items.forEach((item) => {
-            idArr.push(item.id.videoId);
-          });
-          ids = idArr.join(',');
-          const getStats = this.http.get<ResponseInt>(
-            `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&id=${ids}&part=snippet,statistics`,
-            options
-          );
-          getStats.subscribe({
-            next: (result) => {
-              this.resps = result;
-              this.items = result.items;
-              this.filtered = this.items;
-              this.router.navigate(['youtube']);
-            },
-          });
-        },
-        error: console.error,
-      });
+      this.http
+        .get<SearchResponseInt>(
+          `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&type=video&maxResults=15&q=${query}&part=snippet`
+        )
+        .pipe(
+          map((result) =>
+            result.items.map((item) => item.id.videoId).join(',')
+          ),
+          switchMap((ids) =>
+            this.http.get<ResponseInt>(
+              `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&id=${ids}&part=snippet,statistics`
+            )
+          )
+        )
+        .subscribe((result) => {
+          this.resps = result;
+          this.items = result.items;
+          this.filtered = this.items;
+          this.router.navigate(['youtube']);
+        });
     }
   }
 }

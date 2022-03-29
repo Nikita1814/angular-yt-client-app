@@ -7,7 +7,7 @@ import { ResponseManagementService } from '../../services/response-management.se
   selector: 'app-search-item-detailed',
   templateUrl: './search-item-detailed.component.html',
   styleUrls: ['./search-item-detailed.component.css'],
-  encapsulation:ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class SearchItemDetailedComponent {
   itemId: string;
@@ -23,6 +23,4 @@ export class SearchItemDetailedComponent {
     }) as ResponseVidInt;
     this.vidDate = new Date(this.item.snippet.publishedAt);
   }
-
-
 }

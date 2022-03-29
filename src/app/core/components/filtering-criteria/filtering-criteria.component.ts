@@ -7,7 +7,7 @@ import sortFuncs from '../../utils/sort-funcs';
   selector: 'app-filtering-criteria',
   templateUrl: './filtering-criteria.component.html',
   styleUrls: ['./filtering-criteria.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class FilteringCriteriaComponent {
   sortFuncs: {
@@ -16,5 +16,4 @@ export class FilteringCriteriaComponent {
   constructor(public respService: ResponseManagementService) {
     this.sortFuncs = sortFuncs;
   }
-
 }

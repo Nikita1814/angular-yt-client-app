@@ -14,4 +14,10 @@
   </div>
 </div>
 <h3 class="card-s-name">{{ vidObj.snippet.title }}</h3>
-<button id = {{vidObj.id}} [routerLink]="['vid', vidObj.id]" class="card-s-more button-blue">More</button>
+<button
+  id="{{ vidObj.id }}"
+  [routerLink]="['vid', vidObj.id]"
+  class="card-s-more button-blue"
+>
+  More
+</button>
