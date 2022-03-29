@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ResponseVidInt } from '../../models/response-vid-model';
 import { ResponseManagementService } from '../../services/response-management.service';
@@ -8,7 +8,7 @@ import { ResponseManagementService } from '../../services/response-management.se
   templateUrl: './search-item-detailed.component.html',
   styleUrls: ['./search-item-detailed.component.css'],
 })
-export class SearchItemDetailedComponent implements OnInit {
+export class SearchItemDetailedComponent {
   itemId: string;
   item: ResponseVidInt;
   vidDate: Date;
@@ -23,5 +23,5 @@ export class SearchItemDetailedComponent implements OnInit {
     this.vidDate = new Date(this.item.snippet.publishedAt);
   }
 
-  ngOnInit(): void {}
+  
 }

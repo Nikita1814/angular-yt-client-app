@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ResponseManagementService } from '../../services/response-management.service';
 import { ResponseVidInt } from '../../models/response-vid-model';
 
@@ -7,11 +7,11 @@ import { ResponseVidInt } from '../../models/response-vid-model';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css'],
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent {
   vids: ResponseVidInt[];
   constructor(public respService: ResponseManagementService) {
     this.vids = respService.filtered;
   }
 
-  ngOnInit(): void {}
+  
 }

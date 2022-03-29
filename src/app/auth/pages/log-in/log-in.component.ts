@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from '../../auth.service';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css'],
 })
-export class LogInComponent implements OnInit {
+export class LogInComponent {
   mail: string;
   password: string;
   constructor(public authService: AuthService) {
@@ -14,7 +14,7 @@ export class LogInComponent implements OnInit {
     this.password = '';
   }
 
-  ngOnInit(): void {}
+
   handleSignIn(mail: string, password: string) {
     this.authService.signIn(mail, password);
   }

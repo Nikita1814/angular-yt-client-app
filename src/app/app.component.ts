@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from './auth/auth.service';
 import { ResponseManagementService } from './youtube/services/response-management.service';
 
 @Component({

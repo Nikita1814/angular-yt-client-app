@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ResponseManagementService } from '../../../youtube/services/response-management.service';
@@ -8,7 +8,7 @@ import { ResponseManagementService } from '../../../youtube/services/response-ma
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   searchString: string;
   constructor(
     public respService: ResponseManagementService,
@@ -21,5 +21,4 @@ export class HeaderComponent implements OnInit {
     this.respService.makeSearchQuery(this.searchString);
   }
 
-  ngOnInit(): void {}
 }

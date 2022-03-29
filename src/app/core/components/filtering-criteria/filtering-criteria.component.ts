@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ResponseManagementService } from '../../../youtube/services/response-management.service';
 import { ResponseVidInt } from '../../../youtube/models/response-vid-model';
 import sortFuncs from '../../utils/sort-funcs';
@@ -8,7 +8,7 @@ import sortFuncs from '../../utils/sort-funcs';
   templateUrl: './filtering-criteria.component.html',
   styleUrls: ['./filtering-criteria.component.css'],
 })
-export class FilteringCriteriaComponent implements OnInit {
+export class FilteringCriteriaComponent {
   sortFuncs: {
     [key: string]: (a: ResponseVidInt, b: ResponseVidInt) => number;
   };
@@ -16,5 +16,4 @@ export class FilteringCriteriaComponent implements OnInit {
     this.sortFuncs = sortFuncs;
   }
 
-  ngOnInit(): void {}
 }
