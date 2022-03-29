@@ -16,10 +16,7 @@
       class="input-field"
     />
     <div class="form-btns">
-      <button
-        (click)="authService.signIn(mail, password)"
-        class="log-in button-blue"
-      >
+      <button (click)="handleSignIn(mail, password)" class="log-in button-blue">
         Log-in
       </button>
       <button class="register button-blue">Register</button>
