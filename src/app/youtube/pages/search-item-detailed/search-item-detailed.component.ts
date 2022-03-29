@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ResponseVidInt } from '../../models/response-vid-model';
 import { ResponseManagementService } from '../../services/response-management.service';
@@ -7,6 +7,7 @@ import { ResponseManagementService } from '../../services/response-management.se
   selector: 'app-search-item-detailed',
   templateUrl: './search-item-detailed.component.html',
   styleUrls: ['./search-item-detailed.component.css'],
+  encapsulation:ViewEncapsulation.Emulated
 })
 export class SearchItemDetailedComponent {
   itemId: string;
@@ -23,5 +24,5 @@ export class SearchItemDetailedComponent {
     this.vidDate = new Date(this.item.snippet.publishedAt);
   }
 
-  
+
 }

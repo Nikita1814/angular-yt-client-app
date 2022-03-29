@@ -1,4 +1,4 @@
-.card-l {
+:host {
   display: flex;
   background-color: #e5e5e5;
   width: 1000px;

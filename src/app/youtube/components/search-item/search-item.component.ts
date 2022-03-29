@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ResponseVidInt } from 'src/app/youtube/models/response-vid-model';
 
@@ -6,6 +6,7 @@ import { ResponseVidInt } from 'src/app/youtube/models/response-vid-model';
   selector: 'app-search-item',
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.css'],
+  encapsulation:ViewEncapsulation.Emulated
 })
 export class SearchItemComponent implements OnInit {
   @Input('vidObj') vidObj!: ResponseVidInt;

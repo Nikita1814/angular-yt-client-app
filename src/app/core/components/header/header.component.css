@@ -1,0 +1,39 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 8vh;
+}
+.header-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.header-logo {
+  background-image: url(../../../../assets/logo.svg); /*assets/logo.svg*/
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+.header-sort-button {
+  background-image: url(../../../../assets/search_settings.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.header-authorization {
+  border: 1px solid #2f80ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-auth-icon {
+  width: 25px;
+  height: 25px;
+  background-image: url(../../../../assets/login.svg);
+}

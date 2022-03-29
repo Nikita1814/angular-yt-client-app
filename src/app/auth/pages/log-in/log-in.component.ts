@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+
+import { Component, ViewEncapsulation } from '@angular/core';
 import { AuthService } from '../../auth.service';
+
 
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
+
 export class LogInComponent {
   mail: string;
   password: string;

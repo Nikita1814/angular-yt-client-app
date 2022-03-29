@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ResponseManagementService } from '../../../youtube/services/response-management.service';
@@ -7,6 +8,7 @@ import { ResponseManagementService } from '../../../youtube/services/response-ma
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class HeaderComponent {
   searchString: string;
