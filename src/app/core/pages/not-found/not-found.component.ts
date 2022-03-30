@@ -6,6 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./not-found.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class NotFoundComponent {
-  constructor() {}
-}
+export class NotFoundComponent {}

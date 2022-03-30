@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { ResponseManagementService } from '../../../youtube/services/response-management.service';
 import { ResponseVidInt } from '../../../youtube/models/response-vid-model';
 import sortFuncs from '../../utils/sort-funcs';
@@ -9,11 +9,12 @@ import sortFuncs from '../../utils/sort-funcs';
   styleUrls: ['./filtering-criteria.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class FilteringCriteriaComponent {
-  sortFuncs: {
+export class FilteringCriteriaComponent implements OnInit {
+  sortFuncs!: {
     [key: string]: (a: ResponseVidInt, b: ResponseVidInt) => number;
   };
-  constructor(public respService: ResponseManagementService) {
+  constructor(public respService: ResponseManagementService) {}
+  ngOnInit(): void{
     this.sortFuncs = sortFuncs;
   }
 }

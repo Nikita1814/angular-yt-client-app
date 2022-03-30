@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
 
 @Component({
@@ -7,14 +7,17 @@ import { AuthService } from '../../auth.service';
   styleUrls: ['./log-in.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class LogInComponent {
-  mail: string;
-  password: string;
-  constructor(public authService: AuthService) {
+export class LogInComponent implements OnInit  {
+  mail!: string;
+  password!: string;
+
+  constructor(public authService : AuthService ) {
+
+  }
+  ngOnInit(): void {
     this.mail = '';
     this.password = '';
   }
-
   handleSignIn(mail: string, password: string) {
     this.authService.signIn(mail, password);
   }

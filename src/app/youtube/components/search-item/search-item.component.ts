@@ -10,10 +10,7 @@ import { ResponseVidInt } from 'src/app/youtube/models/response-vid-model';
 })
 export class SearchItemComponent implements OnInit {
   @Input('vidObj') vidObj!: ResponseVidInt;
-  imgUrl: string;
-  constructor(private router: Router) {
-    this.imgUrl = '';
-  }
+  imgUrl!: string;
 
   ngOnInit(): void {
     this.imgUrl = this.vidObj.snippet.thumbnails.high.url;

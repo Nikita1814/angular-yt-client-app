@@ -6,6 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./home-page.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class HomePageComponent {
-  constructor() {}
-}
+export class HomePageComponent {}

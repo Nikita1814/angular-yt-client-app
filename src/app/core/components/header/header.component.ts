@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ResponseManagementService } from '../../../youtube/services/response-management.service';
@@ -9,13 +9,16 @@ import { ResponseManagementService } from '../../../youtube/services/response-ma
   styleUrls: ['./header.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class HeaderComponent {
-  searchString: string;
+export class HeaderComponent implements OnInit {
+  searchString!: string;
   constructor(
     public respService: ResponseManagementService,
     public router: Router,
     public authService: AuthService
   ) {
+
+  }
+  ngOnInit(): void {
     this.searchString = '';
   }
   submitSearch() {
