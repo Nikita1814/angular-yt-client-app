@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { ResponseManagementService } from '../../services/response-management.service';
 import { ResponseVidInt } from '../../models/response-vid-model';
 
@@ -8,12 +8,8 @@ import { ResponseVidInt } from '../../models/response-vid-model';
   styleUrls: ['./search-results.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class SearchResultsComponent implements OnInit {
-  vids!: ResponseVidInt[];
+export class SearchResultsComponent {
   constructor(public respService: ResponseManagementService) {
 
-  }
-  ngOnInit(): void {
-    this.vids = this.respService.filtered;
   }
 }

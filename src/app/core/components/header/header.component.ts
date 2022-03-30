@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { UserObjInt } from 'src/app/auth/models/user-model';
 import { ResponseManagementService } from '../../../youtube/services/response-management.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { ResponseManagementService } from '../../../youtube/services/response-ma
 })
 export class HeaderComponent implements OnInit {
   searchString!: string;
+  user!:null | UserObjInt
   constructor(
     public respService: ResponseManagementService,
     public router: Router,
@@ -20,6 +22,11 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {
     this.searchString = '';
+    this.user = this.authService.user
+  }
+  signOut(){
+    this.authService.signOut()
+    this.user = this.authService.user
   }
   submitSearch() {
     this.respService.makeSearchQuery(this.searchString);

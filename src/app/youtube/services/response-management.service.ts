@@ -37,18 +37,19 @@ export class ResponseManagementService {
   }
   filterItems(func?: (a: ResponseVidInt, b: ResponseVidInt) => number): void {
     if (func) {
-      this.filtered = this.items.sort(func);
-      this.filtered = this.wordFilter.transform(
+      this.filtered =[...this.items.sort(func)];
+      this.filtered = [...this.wordFilter.transform(
         this.filtered,
         this.filterString
-      );
+      )];
     } else {
-      this.filtered = this.items;
-      this.filtered = this.wordFilter.transform(
+      this.filtered = [...(this.items)];
+      this.filtered = [...this.wordFilter.transform(
         this.filtered,
         this.filterString
-      );
+      )];
     }
+    console.log('I filtered Items')
   }
   makeSearchQuery(query: string) {
     if (this.authService.loggedIn === true) {
@@ -68,9 +69,10 @@ export class ResponseManagementService {
         )
         .subscribe((result) => {
           this.resps = result;
-          this.items = result.items;
-          this.filtered = this.items;
+          this.items = [...result.items];
+          this.filtered = [...result.items];
           this.router.navigate(['youtube']);
+          console.log('I made the request', this.filtered[0].snippet.title)
         });
     }
   }

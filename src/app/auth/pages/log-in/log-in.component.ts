@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AuthService } from '../../auth.service';
 
 @Component({
@@ -6,6 +6,7 @@ import { AuthService } from '../../auth.service';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class LogInComponent implements OnInit  {
   mail!: string;

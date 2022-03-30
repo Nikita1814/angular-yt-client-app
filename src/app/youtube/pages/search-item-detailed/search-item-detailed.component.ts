@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ResponseVidInt } from '../../models/response-vid-model';
 import { ResponseManagementService } from '../../services/response-management.service';
@@ -8,6 +8,7 @@ import { ResponseManagementService } from '../../services/response-management.se
   templateUrl: './search-item-detailed.component.html',
   styleUrls: ['./search-item-detailed.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class SearchItemDetailedComponent implements OnInit {
   itemId!: string;
