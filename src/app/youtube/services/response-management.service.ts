@@ -43,7 +43,7 @@ export class ResponseManagementService {
         this.filterString
       )];
     } else {
-      this.filtered = [...(this.items)];
+      this.filtered = [...this.items];
       this.filtered = [...this.wordFilter.transform(
         this.filtered,
         this.filterString
@@ -72,7 +72,6 @@ export class ResponseManagementService {
           this.items = [...result.items];
           this.filtered = [...result.items];
           this.router.navigate(['youtube']);
-          console.log('I made the request', this.filtered[0].snippet.title)
         });
     }
   }
