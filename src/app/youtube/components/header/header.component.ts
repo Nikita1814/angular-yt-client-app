@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, OnInit, ChangeDetectionStrategy } from '@
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { UserObjInt } from 'src/app/auth/models/user-model';
-import { ResponseManagementService } from '../../../youtube/services/response-management.service';
+import { ResponseManagementService } from '../../services/response-management.service';
 
 @Component({
   selector: 'app-header',

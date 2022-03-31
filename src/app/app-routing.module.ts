@@ -7,13 +7,13 @@ import { AuthReqGuard } from './guards/auth-req.guard';
 import { SearchResultsComponent } from './youtube/pages/search-results/search-results.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent, canActivate: [AuthReqGuard] },
+
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'youtube',
+    path: '',
     loadChildren: () =>
       import('./youtube/youtube.module').then((m) => m.YoutubeModule),
     canActivate: [AuthReqGuard],

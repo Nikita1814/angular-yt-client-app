@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { ResponseManagementService } from '../../../youtube/services/response-management.service';
-import { ResponseVidInt } from '../../../youtube/models/response-vid-model';
-import sortFuncs from '../../utils/sort-funcs';
+import { ResponseManagementService } from '../../services/response-management.service';
+import { ResponseVidInt } from '../../models/response-vid-model';
+import sortFuncs from '../../../core/utils/sort-funcs';
 
 @Component({
   selector: 'app-filtering-criteria',

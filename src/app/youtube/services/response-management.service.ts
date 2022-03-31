@@ -71,7 +71,7 @@ export class ResponseManagementService {
           this.resps = result;
           this.items = [...result.items];
           this.filtered = [...result.items];
-          this.router.navigate(['youtube']);
+          /*this.router.navigate(['youtube']);*/
         });
     }
   }

@@ -6,6 +6,8 @@ import { WordFilterPipe } from './pipes/word-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { SearchItemDetailedComponent } from './pages/search-item-detailed/search-item-detailed.component';
 import { YtRoutingModule } from './yt-routing.module';
+import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -13,8 +15,10 @@ import { YtRoutingModule } from './yt-routing.module';
     SearchItemComponent,
     WordFilterPipe,
     SearchItemDetailedComponent,
+    FilteringCriteriaComponent,
+    HeaderComponent
   ],
-  exports: [SearchResultsComponent, SearchItemComponent],
+  exports: [SearchResultsComponent, SearchItemComponent, HeaderComponent, FilteringCriteriaComponent],
   imports: [CommonModule, FormsModule, YtRoutingModule],
 })
 export class YoutubeModule {}

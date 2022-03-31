@@ -1,4 +1,7 @@
-<app-search-item
-  *ngFor="let vid of respService.filtered"
-  [vidObj]="vid"
-></app-search-item>
+<app-header></app-header>
+<app-filtering-criteria class="filters" [ngClass]="{ 'hide-elem': !respService.showFilters }"></app-filtering-criteria>
+<div class="main">
+  <div class="search-list">
+    <app-search-item *ngFor="let vid of respService.filtered" [vidObj]="vid"></app-search-item>
+  </div>
+</div>
