@@ -1,0 +1,25 @@
+<div class="main">
+  <h2>Log-in</h2>
+  <div>
+    <p>Mail</p>
+    <input
+      [(ngModel)]="mail"
+      type="text"
+      placeholder="mail"
+      class="input-field"
+    />
+    <p>Password</p>
+    <input
+      [(ngModel)]="password"
+      type="password"
+      placeholder="Password"
+      class="input-field"
+    />
+    <div class="form-btns">
+      <button (click)="handleSignIn(mail, password)" class="log-in button-blue">
+        Log-in
+      </button>
+      <button class="register button-blue">Register</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e5e5e5;
+  padding: 25px;
+}
+
+.input-field {
+  width: 300px;
+  height: 40px;
+  background-color: #e0e0e0;
+}
+.form-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

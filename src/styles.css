@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: Roboto;
+}
+
+.button-blue {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: #2f80ed;
+  border-radius: 5%;
+}
+.header-search-input {
+  width: 396px;
+}
+.main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.page-button {
+  height: 30px;
+  width: 30px;
+}
+
+.hide-elem {
+  display: none !important;
+}
