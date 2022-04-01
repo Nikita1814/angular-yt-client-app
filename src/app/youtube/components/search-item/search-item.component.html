@@ -16,6 +16,7 @@
 <h3 class="card-s-name">{{ vidObj.snippet.title }}</h3>
 <button
   id="{{ vidObj.id }}"
+  (click)="selectDetailed()"
   [routerLink]="['vid', vidObj.id]"
   class="card-s-more button-blue"
 >

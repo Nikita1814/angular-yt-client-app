@@ -16,9 +16,14 @@ import { HeaderComponent } from './components/header/header.component';
     WordFilterPipe,
     SearchItemDetailedComponent,
     FilteringCriteriaComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
-  exports: [SearchResultsComponent, SearchItemComponent, HeaderComponent, FilteringCriteriaComponent],
+  exports: [
+    SearchResultsComponent,
+    SearchItemComponent,
+    HeaderComponent,
+    FilteringCriteriaComponent,
+  ],
   imports: [CommonModule, FormsModule, YtRoutingModule],
 })
 export class YoutubeModule {}

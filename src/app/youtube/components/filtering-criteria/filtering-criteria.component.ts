@@ -1,4 +1,10 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { ResponseManagementService } from '../../services/response-management.service';
 import { ResponseVidInt } from '../../models/response-vid-model';
 import sortFuncs from '../../../core/utils/sort-funcs';
@@ -10,11 +16,17 @@ import sortFuncs from '../../../core/utils/sort-funcs';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class FilteringCriteriaComponent implements OnInit {
+  @Output() updateSort = new EventEmitter<
+    (a: ResponseVidInt, b: ResponseVidInt) => number
+  >();
   sortFuncs!: {
     [key: string]: (a: ResponseVidInt, b: ResponseVidInt) => number;
   };
   constructor(public respService: ResponseManagementService) {}
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.sortFuncs = sortFuncs;
+  }
+  emitSort(sort: string) {
+    this.updateSort.emit(this.sortFuncs[sort]);
   }
 }

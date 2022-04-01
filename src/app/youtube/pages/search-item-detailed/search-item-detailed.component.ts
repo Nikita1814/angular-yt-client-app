@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ResponseVidInt } from '../../models/response-vid-model';
 import { ResponseManagementService } from '../../services/response-management.service';
@@ -8,7 +13,7 @@ import { ResponseManagementService } from '../../services/response-management.se
   templateUrl: './search-item-detailed.component.html',
   styleUrls: ['./search-item-detailed.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection:ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchItemDetailedComponent implements OnInit {
   itemId!: string;
@@ -20,9 +25,7 @@ export class SearchItemDetailedComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.itemId = this.route.snapshot.params['id'];
-    this.item = this.item = this.respService.filtered.find((elem) => {
-      return elem.id === this.itemId;
-    }) as ResponseVidInt;
+    this.item = this.respService.selectedVid as ResponseVidInt;
     this.vidDate = new Date(this.item.snippet.publishedAt);
   }
 }
