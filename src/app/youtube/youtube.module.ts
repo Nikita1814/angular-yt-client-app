@@ -11,7 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UserCardsComponent } from './pages/user-cards/user-cards.component';
 import { UserCardFormComponent } from './components/user-card-form/user-card-form.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     SearchResultsComponent,
@@ -30,6 +30,6 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     HeaderComponent,
     FilteringCriteriaComponent,
   ],
-  imports: [CommonModule, FormsModule, YtRoutingModule],
+  imports: [CommonModule, FormsModule, YtRoutingModule, ReactiveFormsModule],
 })
 export class YoutubeModule {}

@@ -18,4 +18,7 @@ export class UserCardsComponent implements OnInit {
   toggleFormVisibility() {
     this.formIsVisible = !this.formIsVisible;
   }
+  addCard(card: UserCardInfo) {
+    this.userCards.push(card);
+  }
 }

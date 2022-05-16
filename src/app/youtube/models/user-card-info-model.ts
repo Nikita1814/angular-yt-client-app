@@ -3,4 +3,5 @@ export interface UserCardInfo {
   description: string;
   img: string;
   link: string;
+  date: string;
 }
