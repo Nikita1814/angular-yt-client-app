@@ -36,9 +36,8 @@ export class UserCardFormComponent implements OnInit {
     date: new FormControl('', { validators: [ValidateDate], updateOn: 'blur' }),
   });
   constructor() {}
-handleSubmit(){
-
-this.addCard(this.cardForm.value as UserCardInfo)
-}
+  handleSubmit() {
+    this.addCard(this.cardForm.value as UserCardInfo);
+  }
   ngOnInit(): void {}
 }

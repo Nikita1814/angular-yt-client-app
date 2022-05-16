@@ -13,6 +13,7 @@ import { UserCardFormComponent } from './components/user-card-form/user-card-for
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './components/inputs/text-input/text-input.component';
+import { FormErrorLoggerComponent } from '../shared/form-error-logger/form-error-logger.component';
 @NgModule({
   declarations: [
     SearchResultsComponent,
@@ -25,6 +26,7 @@ import { TextInputComponent } from './components/inputs/text-input/text-input.co
     UserCardFormComponent,
     UserCardComponent,
     TextInputComponent,
+    FormErrorLoggerComponent
   ],
   exports: [
     SearchResultsComponent,

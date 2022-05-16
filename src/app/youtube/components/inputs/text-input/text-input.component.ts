@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ValidationErrors } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',
@@ -17,3 +17,4 @@ export class TextInputComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+/*I wanted to make this one reusable*/

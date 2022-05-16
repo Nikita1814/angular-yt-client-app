@@ -7,6 +7,7 @@ import { WordFilterPipe } from './youtube/pipes/word-filter.pipe';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormErrorLoggerComponent } from './shared/form-error-logger/form-error-logger.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [

@@ -1,56 +1,77 @@
 <form (ngSubmit)="handleSubmit()" [formGroup]="cardForm" class="card-form">
-  <div (click)="(toggleFormVisibility)" className="button-blue form-exit">
+  <button (click)="toggleFormVisibility()" className="button-blue form-exit">
     X
+  </button>
+
+  <div class="input-grp">
+    <label class="block-label" htmlFor="title"> Title </label>
+    <input
+      id="title"
+      placeholder="Title"
+      type="text"
+      class="input-field"
+       formControlName="title"
+    />
+    <app-form-error-logger
+      [error]="cardForm.get('title')!.errors"
+    ></app-form-error-logger>
   </div>
 
-  <app-text-input
-    [id]="'title'"
-    [labelText]="'Title'"
-    [placeholder]="'Title'"
-    [formControlName]="'title'"
-    [type]="'text'"
-    [error]="cardForm.get('title')?.errors"
-  >
-  </app-text-input>
+  <div class="input-grp">
+    <label class="block-label" htmlFor="description"> Description </label>
+    <input
+      id="description"
+      placeholder="Description"
+      type="text"
+      class="input-field"
+       formControlName="description"
+    />
+    <app-form-error-logger
+      [error]="cardForm.get('description')!.errors"
+    ></app-form-error-logger>
+  </div>
 
-  <app-text-input
-    [id]="'description'"
-    [labelText]="'Description'"
-    [placeholder]="'Description'"
-    [formControlName]="'description'"
-    [type]="'text'"
-    [error]="cardForm.get('description')?.errors"
-  >
-  </app-text-input>
+  <div class="input-grp">
+    <label class="block-label" htmlFor="img"> Image Link </label>
+    <input
+      id="img"
+      placeholder="Image Link"
+      type="text"
+      class="input-field"
+       formControlName="img"
+    />
+    <app-form-error-logger
+      [error]="cardForm.get('img')!.errors"
+    ></app-form-error-logger>
+  </div>
 
-  <app-text-input
-    [id]="'img'"
-    [labelText]="'Image Link'"
-    [placeholder]="'Image link'"
-    [formControlName]="'img'"
-    [type]="'text'"
-    [error]="cardForm.get('img')?.errors"
-  >
-  </app-text-input>
+  <div class="input-grp">
+    <label class="block-label" htmlFor="link"> Image Link </label>
+    <input
+      id="link"
+      placeholder="Video Link"
+      type="text"
+      class="input-field"
+       formControlName="link"
+    />
+    <app-form-error-logger
+      [error]="cardForm.get('link')!.errors"
+    ></app-form-error-logger>
+  </div>
 
-  <app-text-input
-    [id]="'link'"
-    [labelText]="'Video Link'"
-    [placeholder]="'Video Link'"
-    [formControlName]="'link'"
-    [type]="'text'"
-    [error]="cardForm.get('link')?.errors"
-  >
-  </app-text-input>
+  <div class="input-grp">
+    <label class="block-label" htmlFor="date"> Creation Date </label>
+    <input
+      id="date"
+      placeholder="Creation Date"
+      type="text"
+      class="input-field"
+       formControlName="date"
+    />
+    <app-form-error-logger
+      [error]="cardForm.get('link')!.errors"
+    ></app-form-error-logger>
+  </div>
 
-  <app-text-input
-    [id]="'date'"
-    [labelText]="'Date'"
-    [placeholder]="'Date'"
-    [formControlName]="'date'"
-    [type]="'text'"
-    [error]="cardForm.get('date')?.errors"
-  >
-  </app-text-input>
-  <input type="submit" value="Submit" class='button-blue button-m'></input>
+  <input type="submit" value="Submit" class="button-blue button-m" />
 </form>
