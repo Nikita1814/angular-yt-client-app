@@ -8,10 +8,17 @@ body {
 .button-blue {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
   background-color: #2f80ed;
   border-radius: 5%;
 }
+
+.button-m {
+  width: 120px;
+  height: 32px;
+}
+
 .header-search-input {
   width: 396px;
 }

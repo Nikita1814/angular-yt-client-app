@@ -17,7 +17,7 @@ import { ResponseManagementService } from '../../services/response-management.se
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchItemComponent implements OnInit {
-  @Input('vidObj') vidObj: ResponseVidInt;
+  @Input() vidObj: ResponseVidInt;
   imgUrl: string;
   constructor(public respService: ResponseManagementService) {}
   ngOnInit(): void {

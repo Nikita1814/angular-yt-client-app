@@ -1,19 +1,49 @@
 :host {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.header-main {
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 8vh;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header-search-input {
+  width: 396px;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  width: 260;
+  justify-content: space-between;
+}
+
+.header-links .button-blue {
+  margin-right: 10px;
+}
+.header-search-input {
+  height: 32px;
 }
 .header-filter {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 80%;
+}
+.header-filter div,
+.header-filter input,
+.header-filter button {
+  margin-right: 10px;
 }
 
+.header-filter button {
+  border: none;
+}
 .header-logo {
-  background-image: url(../../../../assets/logo.svg); /*assets/logo.svg*/
+  background-image: url(../../../../assets/logo.svg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 50px;
@@ -31,6 +61,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 32px;
 }
 .header-auth-icon {
   width: 25px;
