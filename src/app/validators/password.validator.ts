@@ -1,6 +1,6 @@
 import { AbstractControl } from '@angular/forms';
 
-export function ValidateLogin(control: AbstractControl) {
+export function ValidatePassword(control: AbstractControl) {
   const value = control.value;
   if (!value) {
     return null;
@@ -12,5 +12,12 @@ export function ValidateLogin(control: AbstractControl) {
   const longEnough = value.length > 7;
   const passwordValid =
     hasUpperCase && hasLowerCase && hasNumeric && hasSpecial && longEnough;
-  return !passwordValid ? { passwordStrength: true } : null;
+  return !value.length
+    ? { error: true, message: `Please enter a password` }
+    : !passwordValid
+    ? {
+        error: true,
+        message: `Your password isn't strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )`,
+      }
+    : null;
 }

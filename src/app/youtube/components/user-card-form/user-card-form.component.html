@@ -1,1 +1,56 @@
-<p>user-card-form works!</p>
+<form (ngSubmit)="handleSubmit()" [formGroup]="cardForm" class="card-form">
+  <div (click)="(toggleFormVisibility)" className="button-blue form-exit">
+    X
+  </div>
+
+  <app-text-input
+    [id]="'title'"
+    [labelText]="'Title'"
+    [placeholder]="'Title'"
+    [formControlName]="'title'"
+    [type]="'text'"
+    [error]="cardForm.get('title')?.errors"
+  >
+  </app-text-input>
+
+  <app-text-input
+    [id]="'description'"
+    [labelText]="'Description'"
+    [placeholder]="'Description'"
+    [formControlName]="'description'"
+    [type]="'text'"
+    [error]="cardForm.get('description')?.errors"
+  >
+  </app-text-input>
+
+  <app-text-input
+    [id]="'img'"
+    [labelText]="'Image Link'"
+    [placeholder]="'Image link'"
+    [formControlName]="'img'"
+    [type]="'text'"
+    [error]="cardForm.get('img')?.errors"
+  >
+  </app-text-input>
+
+  <app-text-input
+    [id]="'link'"
+    [labelText]="'Video Link'"
+    [placeholder]="'Video Link'"
+    [formControlName]="'link'"
+    [type]="'text'"
+    [error]="cardForm.get('link')?.errors"
+  >
+  </app-text-input>
+
+  <app-text-input
+    [id]="'date'"
+    [labelText]="'Date'"
+    [placeholder]="'Date'"
+    [formControlName]="'date'"
+    [type]="'text'"
+    [error]="cardForm.get('date')?.errors"
+  >
+  </app-text-input>
+  <input type="submit" value="Submit" class='button-blue button-m'></input>
+</form>
