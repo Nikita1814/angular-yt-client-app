@@ -8,6 +8,9 @@ import { SearchItemDetailedComponent } from './pages/search-item-detailed/search
 import { YtRoutingModule } from './yt-routing.module';
 import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
 import { HeaderComponent } from './components/header/header.component';
+import { UserCardsComponent } from './pages/user-cards/user-cards.component';
+import { UserCardFormComponent } from './components/user-card-form/user-card-form.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { HeaderComponent } from './components/header/header.component';
     SearchItemDetailedComponent,
     FilteringCriteriaComponent,
     HeaderComponent,
+    UserCardsComponent,
+    UserCardFormComponent,
+    UserCardComponent,
   ],
   exports: [
     SearchResultsComponent,

@@ -1,0 +1,18 @@
+<div className="forms-page">
+  <h1>Make your own personalized cards by clikcing on this button below</h1>
+  <button class="button-blue card-s-more" (click)="toggleFormVisibility()">
+    Click me!
+  </button>
+  <div *ngIf="formIsVisible" className="page-overlay">
+    <app-user-card-form
+      [toggleFormVisibility]="toggleFormVisibility"
+      [userCards]="userCards"
+    ></app-user-card-form>
+  </div>
+  <div className="card-list">
+    <app-user-card
+      *ngFor="let vid of userCards"
+      [userVid]="vid"
+    ></app-user-card>
+  </div>
+</div>
