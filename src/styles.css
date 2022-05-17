@@ -9,8 +9,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  background-color: #2f80ed;
+  color: white !important;
+  background-color: #2f80ed !important;
   border-radius: 5%;
 }
 
@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .page-button {
   height: 30px;
@@ -43,6 +44,7 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;

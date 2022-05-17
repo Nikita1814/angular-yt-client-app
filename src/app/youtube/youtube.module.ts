@@ -26,7 +26,7 @@ import { FormErrorLoggerComponent } from '../shared/form-error-logger/form-error
     UserCardFormComponent,
     UserCardComponent,
     TextInputComponent,
-    FormErrorLoggerComponent
+    FormErrorLoggerComponent,
   ],
   exports: [
     SearchResultsComponent,

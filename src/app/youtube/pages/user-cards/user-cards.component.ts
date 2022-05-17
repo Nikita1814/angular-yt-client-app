@@ -21,4 +21,8 @@ export class UserCardsComponent implements OnInit {
   addCard(card: UserCardInfo) {
     this.userCards.push(card);
   }
+  handleSubmit(val: UserCardInfo) {
+    this.userCards.push(val);
+    this.toggleFormVisibility();
+  }
 }

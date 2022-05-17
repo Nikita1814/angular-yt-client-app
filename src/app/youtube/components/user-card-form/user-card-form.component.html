@@ -1,7 +1,5 @@
 <form (ngSubmit)="handleSubmit()" [formGroup]="cardForm" class="card-form">
-  <button (click)="toggleFormVisibility()" className="button-blue form-exit">
-    X
-  </button>
+  <button (click)="exitForm()" class="button-blue form-exit">X</button>
 
   <div class="input-grp">
     <label class="block-label" htmlFor="title"> Title </label>
@@ -10,9 +8,10 @@
       placeholder="Title"
       type="text"
       class="input-field"
-       formControlName="title"
+      formControlName="title"
     />
     <app-form-error-logger
+      *ngIf="cardForm.get('title')!.touched"
       [error]="cardForm.get('title')!.errors"
     ></app-form-error-logger>
   </div>
@@ -24,9 +23,10 @@
       placeholder="Description"
       type="text"
       class="input-field"
-       formControlName="description"
+      formControlName="description"
     />
     <app-form-error-logger
+      *ngIf="cardForm.get('description')!.touched"
       [error]="cardForm.get('description')!.errors"
     ></app-form-error-logger>
   </div>
@@ -38,23 +38,25 @@
       placeholder="Image Link"
       type="text"
       class="input-field"
-       formControlName="img"
+      formControlName="img"
     />
     <app-form-error-logger
+      *ngIf="cardForm.get('img')!.touched"
       [error]="cardForm.get('img')!.errors"
     ></app-form-error-logger>
   </div>
 
   <div class="input-grp">
-    <label class="block-label" htmlFor="link"> Image Link </label>
+    <label class="block-label" htmlFor="link"> Video Link </label>
     <input
       id="link"
       placeholder="Video Link"
       type="text"
       class="input-field"
-       formControlName="link"
+      formControlName="link"
     />
     <app-form-error-logger
+      *ngIf="cardForm.get('link')!.touched"
       [error]="cardForm.get('link')!.errors"
     ></app-form-error-logger>
   </div>
@@ -66,10 +68,11 @@
       placeholder="Creation Date"
       type="text"
       class="input-field"
-       formControlName="date"
+      formControlName="date"
     />
     <app-form-error-logger
-      [error]="cardForm.get('link')!.errors"
+      *ngIf="cardForm.get('date')!.touched"
+      [error]="cardForm.get('date')!.errors"
     ></app-form-error-logger>
   </div>
 

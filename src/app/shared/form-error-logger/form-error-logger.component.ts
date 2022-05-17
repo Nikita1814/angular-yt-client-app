@@ -7,7 +7,7 @@ import { ValidationErrors } from '@angular/forms';
   styleUrls: ['./form-error-logger.component.css'],
 })
 export class FormErrorLoggerComponent implements OnInit {
-  @Input() error:ValidationErrors | undefined | null;
+  @Input() error: ValidationErrors | undefined | null;
   constructor() {}
 
   ngOnInit(): void {}
