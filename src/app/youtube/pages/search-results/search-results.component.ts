@@ -26,11 +26,11 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
     this.vids = [];
   }
+  /*this.cr.detectChanges();*/
   handleSearch(val: string) {
-    this.respService.makeSearchQuery(val).subscribe((result) => {
-      this.vids = [...result.items]; // despite being reassigned it only works on second search button click
-      /*this.cr.detectChanges();*/
-    });
+   /*this.respService.makeSearchQuery(val).subscribe((result) => {
+      this.vids = [...result.items];
+    });*/
   }
   handleSortUpdate(fun: (a: ResponseVidInt, b: ResponseVidInt) => number) {
     this.vids = [...this.vids.sort(fun)];

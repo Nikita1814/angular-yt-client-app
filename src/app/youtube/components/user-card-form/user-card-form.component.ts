@@ -6,6 +6,9 @@ import { ValidateVideoLink } from 'src/app/validators/video-link.validator';
 import { ValidateDate } from 'src/app/validators/video-date.validator';
 import { ValidateTitle } from 'src/app/validators/title.validator';
 import { ValidateDescription } from 'src/app/validators/description.validator';
+import { Store } from '@ngrx/store';
+import { addUserCard } from '../../redux/actions/user-card-creation.action';
+import { PageState } from '../../redux/state.model';
 
 @Component({
   selector: 'app-user-card-form',
@@ -19,11 +22,15 @@ export class UserCardFormComponent implements OnInit {
   @Output() formExit = new EventEmitter();
   cardForm: FormGroup;
 
-  constructor() {}
+  constructor( private store: Store<PageState>) {}
 
   handleSubmit() {
-    if (this.cardForm.valid) {
+    /*if (this.cardForm.valid) {
       this.formSubmission.emit(this.cardForm.value as UserCardInfo);
+    }*/
+
+    if (this.cardForm.valid) {
+      this.store.dispatch(addUserCard({userCard: this.cardForm.value as UserCardInfo }));
     }
   }
 

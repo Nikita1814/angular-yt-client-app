@@ -8,6 +8,10 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { ytVideosReducer } from './youtube/redux/reducers/ytVideos.reducer';
+import { userCardsReducer } from './youtube/redux/reducers/UserCards.reducer';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -18,6 +22,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
+    StoreModule.forRoot({ ytVideos: ytVideosReducer, userItems: userCardsReducer  })
   ],
   providers: [WordFilterPipe],
   bootstrap: [AppComponent],
