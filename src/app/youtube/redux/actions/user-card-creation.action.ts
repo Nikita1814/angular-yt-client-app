@@ -3,7 +3,5 @@ import { UserCardInfo } from '../../models/user-card-info-model';
 
 export const addUserCard = createAction(
   '[User Cards Page] Card Creation',
-  props<{userCard: UserCardInfo }>()
+  props<{ userCard: UserCardInfo }>()
 );
-
-

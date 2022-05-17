@@ -3,14 +3,16 @@ import { UserCardInfo } from '../../models/user-card-info-model';
 import { addUserCard } from '../actions/user-card-creation.action';
 
 export interface UserCardsState {
-  userCards: UserCardInfo[]
+  userCards: UserCardInfo[];
 }
 
-export const initialState : UserCardsState = {
-  userCards:[]
-}
+export const initialState: UserCardsState = {
+  userCards: [],
+};
 
 export const userCardsReducer = createReducer(
   initialState,
-  on(addUserCard, (state, { userCard }) => ({ userCards:[...state.userCards, userCard ]}))
+  on(addUserCard, (state, { userCard }) => ({
+    userCards: [...state.userCards, userCard],
+  }))
 );

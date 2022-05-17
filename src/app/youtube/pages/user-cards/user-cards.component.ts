@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { UserCardInfo } from '../../models/user-card-info-model';
+import { getUserItems } from '../../redux/selectors/userCard.slelecotr';
+import { PageState } from '../../redux/state.model';
 
 @Component({
   selector: 'app-user-cards',
@@ -9,20 +13,18 @@ import { UserCardInfo } from '../../models/user-card-info-model';
 export class UserCardsComponent implements OnInit {
   formIsVisible: boolean;
   userCards: UserCardInfo[];
-  constructor() {}
+  userCards$: Observable<UserCardInfo[]>;
+  constructor(private store: Store<PageState>) {}
 
   ngOnInit(): void {
     this.formIsVisible = false;
     this.userCards = [];
+    this.userCards$ = this.store.select(getUserItems);
   }
   toggleFormVisibility() {
     this.formIsVisible = !this.formIsVisible;
   }
   addCard(card: UserCardInfo) {
     this.userCards.push(card);
-  }
-  handleSubmit(val: UserCardInfo) {
-    this.userCards.push(val);
-    this.toggleFormVisibility();
   }
 }

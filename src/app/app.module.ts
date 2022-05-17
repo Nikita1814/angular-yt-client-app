@@ -22,7 +22,10 @@ import { userCardsReducer } from './youtube/redux/reducers/UserCards.reducer';
     HttpClientModule,
     ReactiveFormsModule,
     SharedModule,
-    StoreModule.forRoot({ ytVideos: ytVideosReducer, userItems: userCardsReducer  })
+    StoreModule.forRoot({
+      ytVideos: ytVideosReducer,
+      userItems: userCardsReducer,
+    }),
   ],
   providers: [WordFilterPipe],
   bootstrap: [AppComponent],

@@ -18,11 +18,10 @@ import { PageState } from '../../redux/state.model';
 export class UserCardFormComponent implements OnInit {
   @Input() toggleFormVisibility: () => void;
   @Input() addCard: (card: UserCardInfo) => void;
-  @Output() formSubmission = new EventEmitter<UserCardInfo>();
   @Output() formExit = new EventEmitter();
   cardForm: FormGroup;
 
-  constructor( private store: Store<PageState>) {}
+  constructor(private store: Store<PageState>) {}
 
   handleSubmit() {
     /*if (this.cardForm.valid) {
@@ -30,7 +29,10 @@ export class UserCardFormComponent implements OnInit {
     }*/
 
     if (this.cardForm.valid) {
-      this.store.dispatch(addUserCard({userCard: this.cardForm.value as UserCardInfo }));
+      this.store.dispatch(
+        addUserCard({ userCard: this.cardForm.value as UserCardInfo })
+      );
+      this.formExit.emit();
     }
   }
 

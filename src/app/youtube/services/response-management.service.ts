@@ -47,7 +47,9 @@ export class ResponseManagementService {
             `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBY5eUdgQYL-eVEf9Yhr7A-406ScXT2dp8&id=${ids}&part=snippet,statistics`
           )
         ),
-        map((searchResults) => this.store.dispatch(updYtCardList({videos: searchResults.items })) )
+        map((searchResults) =>
+          this.store.dispatch(updYtCardList({ videos: searchResults.items }))
+        )
       );
   }
 }

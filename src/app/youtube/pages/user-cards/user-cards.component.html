@@ -8,12 +8,14 @@
 </button>
 <div *ngIf="formIsVisible" class="page-overlay">
   <app-user-card-form
-    (formSubmission)="handleSubmit($event)"
     (formExit)="toggleFormVisibility()"
     [toggleFormVisibility]="toggleFormVisibility"
     [addCard]="addCard"
   ></app-user-card-form>
 </div>
 <div className="card-list">
-  <app-user-card *ngFor="let vid of userCards" [userVid]="vid"></app-user-card>
+  <app-user-card
+    *ngFor="let userVid of userCards$ | async"
+    [userVid]="userVid"
+  ></app-user-card>
 </div>
