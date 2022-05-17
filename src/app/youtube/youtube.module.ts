@@ -13,7 +13,7 @@ import { UserCardFormComponent } from './components/user-card-form/user-card-for
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './components/inputs/text-input/text-input.component';
-import { FormErrorLoggerComponent } from '../shared/form-error-logger/form-error-logger.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     SearchResultsComponent,
@@ -26,7 +26,6 @@ import { FormErrorLoggerComponent } from '../shared/form-error-logger/form-error
     UserCardFormComponent,
     UserCardComponent,
     TextInputComponent,
-    FormErrorLoggerComponent,
   ],
   exports: [
     SearchResultsComponent,
@@ -34,6 +33,12 @@ import { FormErrorLoggerComponent } from '../shared/form-error-logger/form-error
     HeaderComponent,
     FilteringCriteriaComponent,
   ],
-  imports: [CommonModule, FormsModule, YtRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    YtRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class YoutubeModule {}

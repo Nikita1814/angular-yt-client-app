@@ -51,3 +51,35 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
   z-index: 100;
 }
+
+.form-exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.input-grp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  max-width: 300px;
+  height: 40px;
+  background-color: #e0e0e0;
+}
+
+input.ng-touched.ng-invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+.block-label {
+  display: block;
+  text-align: center;
+}
+
+.error-msg {
+  color: darkred;
+}

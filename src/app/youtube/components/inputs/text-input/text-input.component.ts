@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ValidationErrors } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.css'],
 })
-export class TextInputComponent implements OnInit {
+export class TextInputComponent {
   @Input() id: string;
   @Input() labelText: string;
   @Input() placeholder: string;
@@ -14,7 +14,5 @@ export class TextInputComponent implements OnInit {
   @Input() type: string;
   @Input() error: ValidationErrors | null | undefined;
   constructor() {}
-
-  ngOnInit(): void {}
 }
 /*I wanted to make this one reusable*/

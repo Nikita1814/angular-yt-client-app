@@ -7,7 +7,7 @@ import { WordFilterPipe } from './youtube/pipes/word-filter.pipe';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormErrorLoggerComponent } from './shared/form-error-logger/form-error-logger.component';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,6 +17,7 @@ import { FormErrorLoggerComponent } from './shared/form-error-logger/form-error-
     CoreModule,
     HttpClientModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [WordFilterPipe],
   bootstrap: [AppComponent],

@@ -10,36 +10,4 @@
   height: 520px;
 }
 
-.form-exit {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  align-self: flex-end;
-}
 
-.input-grp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-input {
-  max-width: 300px;
-  height: 40px;
-  background-color: #e0e0e0;
-}
-
-input.ng-touched.ng-invalid {
-  box-shadow: 0 0 5px 1px red;
-}
-.block-label {
-  display: block;
-  text-align: center;
-}
-
-.error-msg {
-  color: darkred;
-}
-/*'https://i.ytimg.com/vi/YN8zNnV0sK8/hqdefault.jpg'*/
-/*https://www.youtube.com/watch?v=VdXpdliMIXc&t=3470s*/

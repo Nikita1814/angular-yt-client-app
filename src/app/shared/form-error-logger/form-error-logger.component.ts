@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -6,9 +6,7 @@ import { ValidationErrors } from '@angular/forms';
   templateUrl: './form-error-logger.component.html',
   styleUrls: ['./form-error-logger.component.css'],
 })
-export class FormErrorLoggerComponent implements OnInit {
+export class FormErrorLoggerComponent {
   @Input() error: ValidationErrors | undefined | null;
   constructor() {}
-
-  ngOnInit(): void {}
 }
