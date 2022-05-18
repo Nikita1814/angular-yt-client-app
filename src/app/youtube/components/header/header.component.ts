@@ -1,9 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { UserObjInt } from 'src/app/auth/models/user-model';
@@ -26,8 +21,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchString = '';
-    this.user = this.
-    authService.user;
+    this.user = this.authService.user;
   }
 
   signOut() {

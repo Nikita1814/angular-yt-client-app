@@ -10,10 +10,23 @@
       class="input-field"
       formControlName="title"
     />
-    <app-form-error-logger
+    <ng-container
       *ngIf="cardForm.get('title')!.touched"
-      [error]="cardForm.get('title')!.errors"
-    ></app-form-error-logger>
+      *ngIf="cardForm.get('title')!.invalid"
+    >
+      <app-form-error-logger
+        *ngIf="cardForm.get('title')!.errors.required"
+        [error]="Please enter a title"
+      ></app-form-error-logger>
+      <app-form-error-logger
+        *ngIf="cardForm.get('title')!.errors.minLength"
+        [error]="{message: The title is too short }"
+      ></app-form-error-logger>
+      <app-form-error-logger
+        *ngIf="cardForm.get('title')!.errors.maxLength"
+        [error]="message: The title is too long"
+      ></app-form-error-logger>
+    </ng-container>
   </div>
 
   <div class="input-grp">
@@ -25,10 +38,15 @@
       class="input-field"
       formControlName="description"
     />
-    <app-form-error-logger
+    <ng-container
       *ngIf="cardForm.get('description')!.touched"
-      [error]="cardForm.get('description')!.errors"
-    ></app-form-error-logger>
+      *ngIf="cardForm.get('description')!.invalid"
+    >
+      <app-form-error-logger
+        *ngIf="cardForm.get('description')!.errors.maxLength"
+        [error]="The title is too long"
+      ></app-form-error-logger>
+    </ng-container>
   </div>
 
   <div class="input-grp">
@@ -40,10 +58,19 @@
       class="input-field"
       formControlName="img"
     />
-    <app-form-error-logger
+    <ng-container
       *ngIf="cardForm.get('img')!.touched"
-      [error]="cardForm.get('img')!.errors"
-    ></app-form-error-logger>
+      *ngIf="cardForm.get('img')!.invalid"
+    >
+      <app-form-error-logger
+        *ngIf="cardForm.get('img')!.errors.imgLinkInvalid"
+        [error]="The image link is invalid"
+      ></app-form-error-logger>
+      <app-form-error-logger
+        *ngIf="cardForm.get('img')!.errors.required"
+        [error]="Please enter the image link"
+      ></app-form-error-logger>
+    </ng-container>
   </div>
 
   <div class="input-grp">
@@ -55,10 +82,20 @@
       class="input-field"
       formControlName="link"
     />
-    <app-form-error-logger
+    <ng-container
       *ngIf="cardForm.get('link')!.touched"
-      [error]="cardForm.get('link')!.errors"
-    ></app-form-error-logger>
+      *ngIf="cardForm.get('link')!.invalid"
+    >
+      <app-form-error-logger
+        *ngIf="cardForm.get('link')!.errors.required"
+        [error]="Please enter a video link"
+      ></app-form-error-logger>
+
+      <app-form-error-logger
+        *ngIf="cardForm.get('link')!.errors.videoLinkInvalid"
+        [error]="The video link is invalid"
+      ></app-form-error-logger>
+    </ng-container>
   </div>
 
   <div class="input-grp">
@@ -70,10 +107,15 @@
       class="input-field"
       formControlName="date"
     />
-    <app-form-error-logger
+    <ng-container
       *ngIf="cardForm.get('date')!.touched"
-      [error]="cardForm.get('date')!.errors"
-    ></app-form-error-logger>
+      *ngIf="cardForm.get('date')!.invalid"
+    >
+      <app-form-error-logger
+        *ngIf="cardForm.get('link')!.errors.dateInvalid"
+        [error]="The date is invalid"
+      ></app-form-error-logger>
+    </ng-container>
   </div>
 
   <input type="submit" value="Submit" class="button-blue button-m" />

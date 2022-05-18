@@ -23,7 +23,7 @@ export class FilteringCriteriaComponent implements OnInit {
     [key: string]: (a: ResponseVidInt, b: ResponseVidInt) => number;
   };
   constructor(public respService: ResponseManagementService) {}
-  
+
   ngOnInit(): void {
     this.sortFuncs = sortFuncs;
   }

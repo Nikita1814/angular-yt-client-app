@@ -9,5 +9,5 @@ import { ValidationErrors } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormErrorLoggerComponent {
-  @Input() error: ValidationErrors | undefined | null;
+  @Input() error: string;
 }
