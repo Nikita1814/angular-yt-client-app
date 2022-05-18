@@ -5,7 +5,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { AuthService } from '../../auth.service';
-import { FormControl, FormGroup, } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ValidateLogin } from 'src/app/validators/login.validator';
 import { ValidatePassword } from 'src/app/validators/password.validator';
 

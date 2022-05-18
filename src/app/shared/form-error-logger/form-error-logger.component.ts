@@ -1,3 +1,4 @@
+import { ChangeDetectionStrategy } from '@angular/compiler';
 import { Component, Input } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
 
@@ -5,8 +6,8 @@ import { ValidationErrors } from '@angular/forms';
   selector: 'app-form-error-logger',
   templateUrl: './form-error-logger.component.html',
   styleUrls: ['./form-error-logger.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormErrorLoggerComponent {
   @Input() error: ValidationErrors | undefined | null;
-  constructor() {}
 }

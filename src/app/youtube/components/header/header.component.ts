@@ -1,7 +1,5 @@
-import { outputAst } from '@angular/compiler';
 import {
   Component,
-  ViewEncapsulation,
   OnInit,
   Output,
   EventEmitter,
@@ -15,7 +13,6 @@ import { ResponseManagementService } from '../../services/response-management.se
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  encapsulation: ViewEncapsulation.Emulated,
 })
 export class HeaderComponent implements OnInit {
   searchString!: string;
@@ -26,14 +23,18 @@ export class HeaderComponent implements OnInit {
     public router: Router,
     public authService: AuthService
   ) {}
+
   ngOnInit(): void {
     this.searchString = '';
-    this.user = this.authService.user;
+    this.user = this.
+    authService.user;
   }
+
   signOut() {
     this.authService.signOut();
     this.user = this.authService.user;
   }
+
   submitSearch() {
     /*this.respService.makeSearchQuery(this.searchString))*/
     this.initSearch.emit(this.searchString);
