@@ -23,6 +23,7 @@ export class SearchItemDetailedComponent implements OnInit {
     private respService: ResponseManagementService,
     public route: ActivatedRoute
   ) {}
+  
   ngOnInit(): void {
     this.itemId = this.route.snapshot.params['id'];
     this.item = this.respService.selectedVid as ResponseVidInt;

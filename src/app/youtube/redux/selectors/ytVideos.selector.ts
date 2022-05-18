@@ -7,7 +7,7 @@ export interface YtVideosState {
   vids: ResponseVidInt[];
 }
 
-const ytVidsSelector = createFeatureSelector<YtVideosState>('userItems');
+const ytVidsSelector = createFeatureSelector<YtVideosState>('ytVideos');
 
 export const getYtVids = createSelector(
   ytVidsSelector,

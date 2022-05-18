@@ -19,13 +19,17 @@ export class FilteringCriteriaComponent implements OnInit {
   @Output() updateSort = new EventEmitter<
     (a: ResponseVidInt, b: ResponseVidInt) => number
   >();
-  sortFuncs!: {
+
+  public sortFuncs!: {
     [key: string]: (a: ResponseVidInt, b: ResponseVidInt) => number;
   };
+
   constructor(public respService: ResponseManagementService) {}
+
   ngOnInit(): void {
     this.sortFuncs = sortFuncs;
   }
+
   emitSort(sort: string) {
     this.updateSort.emit(this.sortFuncs[sort]);
   }

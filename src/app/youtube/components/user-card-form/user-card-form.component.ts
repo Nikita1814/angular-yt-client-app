@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { UserCardInfo } from '../../models/user-card-info-model';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ValidateImgLink } from 'src/app/validators/img-link.validator';
@@ -14,6 +21,7 @@ import { PageState } from '../../redux/state.model';
   selector: 'app-user-card-form',
   templateUrl: './user-card-form.component.html',
   styleUrls: ['./user-card-form.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCardFormComponent implements OnInit {
   @Input() toggleFormVisibility: () => void;
@@ -39,6 +47,7 @@ export class UserCardFormComponent implements OnInit {
   exitForm() {
     this.formExit.emit();
   }
+  
   ngOnInit(): void {
     this.cardForm = new FormGroup({
       title: new FormControl('', {

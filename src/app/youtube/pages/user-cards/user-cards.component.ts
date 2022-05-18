@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { UserCardInfo } from '../../models/user-card-info-model';
@@ -9,6 +9,7 @@ import { PageState } from '../../redux/state.model';
   selector: 'app-user-cards',
   templateUrl: './user-cards.component.html',
   styleUrls: ['./user-cards.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserCardsComponent implements OnInit {
   formIsVisible: boolean;

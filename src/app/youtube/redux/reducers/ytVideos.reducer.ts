@@ -12,5 +12,5 @@ export const initialState: YtVideosState = {
 
 export const ytVideosReducer = createReducer(
   initialState,
-  on(updYtCardList, (state, { videos }) => ({ vids: videos }))
+  on(updYtCardList, (state, { videos }) => ({ ...state, vids: [...videos] }))
 );

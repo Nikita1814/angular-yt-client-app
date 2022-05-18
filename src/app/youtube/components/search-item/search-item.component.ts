@@ -20,9 +20,11 @@ export class SearchItemComponent implements OnInit {
   @Input() vidObj: ResponseVidInt;
   imgUrl: string;
   constructor(public respService: ResponseManagementService) {}
+  
   ngOnInit(): void {
     this.imgUrl = this.vidObj.snippet.thumbnails.high.url;
   }
+
   selectDetailed() {
     this.respService.selectedVid = this.vidObj;
   }

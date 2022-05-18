@@ -26,16 +26,20 @@ export class HeaderComponent implements OnInit {
     public router: Router,
     public authService: AuthService
   ) {}
+  
   ngOnInit(): void {
     this.searchString = '';
     this.user = this.authService.user;
   }
+
   signOut() {
     this.authService.signOut();
     this.user = this.authService.user;
   }
+
   submitSearch() {
     /*this.respService.makeSearchQuery(this.searchString))*/
+    /*this.respService.makeSearchQuery(this.searchString).subscribe();*/
     this.initSearch.emit(this.searchString);
   }
 }
