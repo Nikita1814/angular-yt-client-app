@@ -88,7 +88,7 @@
       ></app-form-error-logger>
 
       <app-form-error-logger
-        *ngIf="cardForm.get('link')!.errors!['videoLinkInvalid']"
+        *ngIf="cardForm.get('link')!.errors!['pattern']"
         [error]="'The video link is invalid'"
       ></app-form-error-logger>
     </ng-container>
@@ -117,5 +117,5 @@
     </ng-container>
   </div>
 
-  <input type="submit" value="Submit" class="button-blue button-m" />
+  <input [disabled]="!cardForm.valid" type="submit" value="Submit" class="button-blue button-m" />
 </form>

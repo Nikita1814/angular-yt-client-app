@@ -1,0 +1,14 @@
+<label class="block-label" htmlFor="id"> {{title}} </label>
+      <input
+        id="id"
+        placeholder="title"
+        type="type"
+        class="input-field"
+        [formControl]="c"
+      />
+
+        <app-form-error-logger
+          *ngIf="errorsObj"
+          [error]="errorMsgs[`${Object.values(errorsObj)[0]}`]"
+        ></app-form-error-logger>
+

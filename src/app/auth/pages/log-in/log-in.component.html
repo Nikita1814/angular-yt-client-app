@@ -17,7 +17,7 @@
           [error]="'Please enter an email'"
         ></app-form-error-logger>
         <app-form-error-logger
-          *ngIf="logInForm.get('mail')!.errors!['emailInvalid']"
+          *ngIf="logInForm.get('mail')!.errors!['email']"
           [error]="'Email is invalid'"
         ></app-form-error-logger>
       </ng-container>
@@ -28,7 +28,7 @@
       <input
         id="password"
         placeholder="password"
-        type="text"
+        type="password"
         class="input-field"
         formControlName="password"
       />
@@ -40,7 +40,7 @@
           [error]="'Please enter a password'"
         ></app-form-error-logger>
         <app-form-error-logger
-          *ngIf="logInForm.get('password')!.errors!['passwordInvalid']"
+          *ngIf="logInForm.get('password')!.errors!['pattern']"
           [error]="'Your password is not strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )'"
         ></app-form-error-logger>
       </ng-container>
@@ -48,16 +48,12 @@
 
     <div class="form-btns">
       <input
+        [disabled]="!logInForm.valid"
         type="submit"
         value="Sign-in"
         (click)="handleSignIn()"
         class="log-in button-blue"
-      />
-      <input
-        type="submit"
-        value="Register"
-        (click)="handleSignIn()"
-        class="log-in button-blue"
+        disabled=""
       />
     </div>
   </form>

@@ -61,7 +61,7 @@ export class UserCardFormComponent {
     link: [
       '',
       {
-        validators: [ValidateVideoLink],
+        validators: [Validators.pattern(/http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/), ValidateVideoLink],
         updateOn: 'change',
       },
     ],

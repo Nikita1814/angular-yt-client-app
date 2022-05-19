@@ -26,11 +26,11 @@ export class LogInComponent implements OnInit {
     this.password = '';
     this.logInForm = new FormGroup({
       mail: new FormControl('', {
-        validators: [ValidateLogin, Validators.required],
+        validators: [Validators.required, Validators.email],
         updateOn: 'change',
       }),
       password: new FormControl('', {
-        validators: [ValidatePassword, Validators.required],
+        validators: [Validators.pattern(/[A-Za-z0-9!@#?]/), Validators.required],
         updateOn: 'change',
       }),
     });
