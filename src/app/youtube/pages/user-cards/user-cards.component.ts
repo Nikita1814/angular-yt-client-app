@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy } from '@angular/compiler';
-import { Component } from '@angular/core';
+import {  } from '@angular/compiler';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { UserCardInfo } from '../../models/user-card-info-model';
 
 @Component({
@@ -11,6 +11,8 @@ import { UserCardInfo } from '../../models/user-card-info-model';
 export class UserCardsComponent {
   formIsVisible: boolean = false;
   userCards: UserCardInfo[] = [];
+
+  constructor() {}
 
   toggleFormVisibility() {
     this.formIsVisible = !this.formIsVisible;

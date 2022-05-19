@@ -4,9 +4,11 @@ import { AbstractControl } from '@angular/forms';
 export function ValidateLogin(control: AbstractControl) {
   const value = control.value;
   const isValidEmail = /^\S+@\S+\.\S+$/.test(control.value);
-  return !value.length
+  /*return !value.length
     ? { error: true, message: `Please enter a login email` }
     : !isValidEmail
     ? { error: true, message: `The login email is invalid` }
-    : null;
+    : null;*/
+
+  return !isValidEmail ? { emailInvalid: true } : null;
 }

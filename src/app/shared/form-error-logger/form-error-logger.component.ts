@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy } from '@angular/compiler';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -10,4 +9,5 @@ import { ValidationErrors } from '@angular/forms';
 })
 export class FormErrorLoggerComponent {
   @Input() error: string;
+  constructor() {}
 }

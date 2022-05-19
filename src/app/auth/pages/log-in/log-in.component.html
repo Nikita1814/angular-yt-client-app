@@ -9,10 +9,18 @@
         class="input-field"
         formControlName="mail"
       />
-      <app-form-error-logger
-        *ngIf="logInForm.get('mail')!.touched"
-        [error]="logInForm.get('mail')!.errors"
-      ></app-form-error-logger>
+      <ng-container
+        *ngIf="logInForm.get('mail')!.touched && logInForm.get('mail')!.invalid "
+      >
+        <app-form-error-logger
+          *ngIf="logInForm.get('mail')!.errors!['required']"
+          [error]="'Please enter an email'"
+        ></app-form-error-logger>
+        <app-form-error-logger
+          *ngIf="logInForm.get('mail')!.errors!['emailInvalid']"
+          [error]="'Email is invalid'"
+        ></app-form-error-logger>
+      </ng-container>
     </div>
 
     <div class="input-grp">
@@ -24,10 +32,18 @@
         class="input-field"
         formControlName="password"
       />
-      <app-form-error-logger
-        *ngIf="logInForm.get('password')!.touched"
-        [error]="logInForm.get('password')!.errors"
-      ></app-form-error-logger>
+      <ng-container
+        *ngIf="logInForm.get('password')!.touched && logInForm.get('password')!.invalid"
+      >
+        <app-form-error-logger
+          *ngIf="logInForm.get('password')!.errors!['required']"
+          [error]="'Please enter a password'"
+        ></app-form-error-logger>
+        <app-form-error-logger
+          *ngIf="logInForm.get('password')!.errors!['passwordInvalid']"
+          [error]="'Your password is not strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )'"
+        ></app-form-error-logger>
+      </ng-container>
     </div>
 
     <div class="form-btns">

@@ -5,7 +5,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { AuthService } from '../../auth.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidateLogin } from 'src/app/validators/login.validator';
 import { ValidatePassword } from 'src/app/validators/password.validator';
 
@@ -26,11 +26,11 @@ export class LogInComponent implements OnInit {
     this.password = '';
     this.logInForm = new FormGroup({
       mail: new FormControl('', {
-        validators: [ValidateLogin],
+        validators: [ValidateLogin, Validators.required],
         updateOn: 'change',
       }),
       password: new FormControl('', {
-        validators: [ValidatePassword],
+        validators: [ValidatePassword, Validators.required],
         updateOn: 'change',
       }),
     });

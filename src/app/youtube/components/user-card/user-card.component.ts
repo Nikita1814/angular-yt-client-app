@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy } from '@angular/compiler';
-import { Component, Input, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UserCardInfo } from '../../models/user-card-info-model';
 
 @Component({
@@ -10,4 +10,5 @@ import { UserCardInfo } from '../../models/user-card-info-model';
 })
 export class UserCardComponent {
   @Input() userVid: UserCardInfo;
+  constructor() {}
 }
