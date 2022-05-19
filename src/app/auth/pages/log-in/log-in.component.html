@@ -1,50 +1,31 @@
 <div class="main">
   <form (ngSubmit)="handleSignIn()" [formGroup]="logInForm" class="log-in-form">
-    <div class="input-grp">
-      <label class="block-label" htmlFor="mail"> Login </label>
-      <input
-        id="mail"
-        placeholder="login"
-        type="text"
-        class="input-field"
-        formControlName="mail"
-      />
-      <ng-container
-        *ngIf="logInForm.get('mail')!.touched && logInForm.get('mail')!.invalid "
-      >
-        <app-form-error-logger
-          *ngIf="logInForm.get('mail')!.errors!['required']"
-          [error]="'Please enter an email'"
-        ></app-form-error-logger>
-        <app-form-error-logger
-          *ngIf="logInForm.get('mail')!.errors!['email']"
-          [error]="'Email is invalid'"
-        ></app-form-error-logger>
-      </ng-container>
-    </div>
+    <app-input-and-error
+      [type]="'email'"
+      [title]="'Login'"
+      [id]="'mail'"
+      [controlName]="'mail'"
+      [errorsObj]="logInForm.get('mail')!.errors"
+      [errorMsgs]="{
+        required: 'Please enter an email',
+        email: 'Email is invalid'
+      }"
+      [isTouched]="logInForm.get('mail')!.touched"
+    ></app-input-and-error>
 
-    <div class="input-grp">
-      <label class="block-label" htmlFor="password"> Password </label>
-      <input
-        id="password"
-        placeholder="password"
-        type="password"
-        class="input-field"
-        formControlName="password"
-      />
-      <ng-container
-        *ngIf="logInForm.get('password')!.touched && logInForm.get('password')!.invalid"
-      >
-        <app-form-error-logger
-          *ngIf="logInForm.get('password')!.errors!['required']"
-          [error]="'Please enter a password'"
-        ></app-form-error-logger>
-        <app-form-error-logger
-          *ngIf="logInForm.get('password')!.errors!['pattern']"
-          [error]="'Your password is not strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )'"
-        ></app-form-error-logger>
-      </ng-container>
-    </div>
+    <app-input-and-error
+      [type]="'password'"
+      [title]="'Password'"
+      [id]="'password'"
+      [controlName]="'password'"
+      [errorsObj]="logInForm.get('password')!.errors"
+      [errorMsgs]="{
+        required: 'Please enter a password',
+        pattern:
+          'Your password is not strong enough,the passsword must contain at least 8 characters including: uppercase, lowercase, letters, numbers, special characters (! @ # ? )'
+      }"
+      [isTouched]="logInForm.get('password')!.touched"
+    ></app-input-and-error>
 
     <div class="form-btns">
       <input

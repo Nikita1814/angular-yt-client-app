@@ -1,5 +1,9 @@
-
-import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { UserCardInfo } from '../../models/user-card-info-model';
 
 @Component({

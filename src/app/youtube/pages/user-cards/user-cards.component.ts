@@ -1,4 +1,3 @@
-import {  } from '@angular/compiler';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { UserCardInfo } from '../../models/user-card-info-model';
 

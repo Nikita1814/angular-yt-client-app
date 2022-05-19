@@ -38,7 +38,10 @@
       formControlName="description"
     />
     <ng-container
-      *ngIf="cardForm.get('description')!.touched && cardForm.get('description')!.invalid"
+      *ngIf="
+        cardForm.get('description')!.touched &&
+        cardForm.get('description')!.invalid
+      "
     >
       <app-form-error-logger
         *ngIf="cardForm.get('description')!.errors!['maxlength']"
@@ -80,7 +83,7 @@
       formControlName="link"
     />
     <ng-container
-      *ngIf="cardForm.get('link')!.touched && cardForm.get('link')!.invalid "
+      *ngIf="cardForm.get('link')!.touched && cardForm.get('link')!.invalid"
     >
       <app-form-error-logger
         *ngIf="cardForm.get('link')!.errors!['required']"
@@ -104,9 +107,9 @@
       formControlName="date"
     />
     <ng-container
-      *ngIf="cardForm.get('date')!.touched && cardForm.get('date')!.invalid "
+      *ngIf="cardForm.get('date')!.touched && cardForm.get('date')!.invalid"
     >
-    <app-form-error-logger
+      <app-form-error-logger
         *ngIf="cardForm.get('date')!.errors!['required']"
         [error]="'Please enter a date'"
       ></app-form-error-logger>
@@ -117,5 +120,10 @@
     </ng-container>
   </div>
 
-  <input [disabled]="!cardForm.valid" type="submit" value="Submit" class="button-blue button-m" />
+  <input
+    [disabled]="!cardForm.valid"
+    type="submit"
+    value="Submit"
+    class="button-blue button-m"
+  />
 </form>

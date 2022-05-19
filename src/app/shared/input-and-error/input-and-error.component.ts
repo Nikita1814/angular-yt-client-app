@@ -1,5 +1,12 @@
-import { Component, Input, OnInit, ViewChild, } from '@angular/core';
-import { ControlContainer, ControlValueAccessor, FormControl, FormControlDirective, NG_VALUE_ACCESSOR, ValidationErrors } from '@angular/forms';
+import { Component, Input, ViewChild } from '@angular/core';
+import {
+  ControlContainer,
+  ControlValueAccessor,
+  FormControl,
+  FormControlDirective,
+  NG_VALUE_ACCESSOR,
+  ValidationErrors,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input-and-error',
@@ -9,31 +16,40 @@ import { ControlContainer, ControlValueAccessor, FormControl, FormControlDirecti
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: InputAndErrorComponent,
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
-export class InputAndErrorComponent implements ControlValueAccessor{
-
-  @Input() type: string
-  @Input() title : string
-  @Input() errorsObj: ValidationErrors | null
-  @Input() errorMsgs: {[kind:string] : string}
-  @Input() id:string
-  @Input() formControl: FormControl
-  @Input() controlName: string
-  @ViewChild(FormControlDirective, {static: true})
-      formControlDirective: FormControlDirective;
-
-  private value: string
-  constructor(private controlContainer: ControlContainer) { }
-
-  get c() {
-    return this.formControl || this.controlContainer!.control!.get(this.controlName);
+export class InputAndErrorComponent implements ControlValueAccessor {
+  @Input() type: string;
+  @Input() title: string;
+  @Input() errorsObj: ValidationErrors | null;
+  @Input() errorMsgs: { [kind: string]: string };
+  @Input() id: string;
+  @Input() formControl: FormControl;
+  @Input() controlName: string;
+  @Input() isTouched: boolean;
+  @ViewChild(FormControlDirective, { static: true })
+  formControlDirective: FormControlDirective;
+  public errorMsg: string | null;
+  private value: string;
+  constructor(private controlContainer: ControlContainer) {
+    if (this.errorsObj)
+      this.errorMsg =
+        this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`] || null;
   }
 
+  get c() {
+    return (
+      this.formControl || this.controlContainer!.control!.get(this.controlName)
+    );
+  }
 
-
+  getMsg(): string {
+    return this.errorsObj && this.errorMsgs
+      ? this.errorMsgs[`${Object.keys(this.errorsObj)[0]}`]
+      : '';
+  }
 
   registerOnTouched(fn: unknown): void {
     this.formControlDirective!.valueAccessor!.registerOnTouched(fn);
@@ -46,5 +62,4 @@ export class InputAndErrorComponent implements ControlValueAccessor{
   writeValue(obj: unknown): void {
     this.formControlDirective!.valueAccessor!.writeValue(obj);
   }
-
 }

@@ -1,24 +1,14 @@
 import {
   Component,
   Input,
-  OnInit,
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { UserCardInfo } from '../../models/user-card-info-model';
-import {
-  FormControl,
-  FormGroup,
-  NgForm,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { Validators, FormBuilder } from '@angular/forms';
 import { ValidateImgLink } from 'src/app/validators/img-link.validator';
-import { ValidateVideoLink } from 'src/app/validators/video-link.validator';
 import { ValidateDate } from 'src/app/validators/video-date.validator';
-import { ValidateTitle } from 'src/app/validators/title.validator';
-import { ValidateDescription } from 'src/app/validators/description.validator';
 
 @Component({
   selector: 'app-user-card-form',
@@ -61,7 +51,11 @@ export class UserCardFormComponent {
     link: [
       '',
       {
-        validators: [Validators.pattern(/http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/), ValidateVideoLink],
+        validators: [
+          Validators.pattern(
+            /http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/
+          ),
+        ],
         updateOn: 'change',
       },
     ],
@@ -73,32 +67,6 @@ export class UserCardFormComponent {
       },
     ],
   });
-  /*cardForm: FormGroup = new FormGroup({
-    title: new FormControl('', {
-      validators: [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(20),
-      ],
-      updateOn: 'change',
-    }),
-    description: new FormControl('', {
-      validators: [Validators.maxLength(255)],
-      updateOn: 'change',
-    }),
-    img: new FormControl('', {
-      validators: [ValidateImgLink],
-      updateOn: 'change',
-    }),
-    link: new FormControl('', {
-      validators: [ValidateVideoLink],
-      updateOn: 'change',
-    }),
-    date: new FormControl('', {
-      validators: [ValidateDate],
-      updateOn: 'change',
-    }),
-  });*/
 
   constructor(private fb: FormBuilder) {}
 

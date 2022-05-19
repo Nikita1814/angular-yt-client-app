@@ -8,9 +8,9 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
-import { InputAndErrorComponent } from './input-and-error/input-and-error.component';
+
 @NgModule({
-  declarations: [AppComponent, InputAndErrorComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

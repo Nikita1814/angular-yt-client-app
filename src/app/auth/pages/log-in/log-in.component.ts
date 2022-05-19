@@ -6,8 +6,6 @@ import {
 } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ValidateLogin } from 'src/app/validators/login.validator';
-import { ValidatePassword } from 'src/app/validators/password.validator';
 
 @Component({
   selector: 'app-log-in',
@@ -30,7 +28,10 @@ export class LogInComponent implements OnInit {
         updateOn: 'change',
       }),
       password: new FormControl('', {
-        validators: [Validators.pattern(/[A-Za-z0-9!@#?]/), Validators.required],
+        validators: [
+          Validators.pattern(/[A-Za-z0-9!@#?]/),
+          Validators.required,
+        ],
         updateOn: 'change',
       }),
     });
