@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { WordFilterPipe } from './youtube/pipes/word-filter.pipe';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     CoreModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [WordFilterPipe],
   bootstrap: [AppComponent],

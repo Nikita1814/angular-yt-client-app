@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ResponseManagementService } from './youtube/services/response-management.service';
 
 @Component({
@@ -6,7 +6,10 @@ import { ResponseManagementService } from './youtube/services/response-managemen
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-Yt-client-app';
   constructor(public respService: ResponseManagementService) {}
+  ngOnInit(): void {
+    localStorage.clear();
+  }
 }

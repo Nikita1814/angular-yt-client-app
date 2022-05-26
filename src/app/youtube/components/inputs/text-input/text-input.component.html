@@ -1,0 +1,12 @@
+<div class="input-grp">
+  <label class="block-label" htmlFor="{{ id }}">
+    {{ labelText }}
+  </label>
+  <input
+    id="{{ id }}"
+    placeholder="{{ placeholder }}"
+    type="{{ type }}"
+    class="input-field"
+  />
+  <span *ngIf="error" class="block-label error-msg"> {{ error }}</span>
+</div>

@@ -8,7 +8,12 @@ import { SearchItemDetailedComponent } from './pages/search-item-detailed/search
 import { YtRoutingModule } from './yt-routing.module';
 import { FilteringCriteriaComponent } from './components/filtering-criteria/filtering-criteria.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { UserCardsComponent } from './pages/user-cards/user-cards.component';
+import { UserCardFormComponent } from './components/user-card-form/user-card-form.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TextInputComponent } from './components/inputs/text-input/text-input.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     SearchResultsComponent,
@@ -17,6 +22,10 @@ import { HeaderComponent } from './components/header/header.component';
     SearchItemDetailedComponent,
     FilteringCriteriaComponent,
     HeaderComponent,
+    UserCardsComponent,
+    UserCardFormComponent,
+    UserCardComponent,
+    TextInputComponent,
   ],
   exports: [
     SearchResultsComponent,
@@ -24,6 +33,12 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent,
     FilteringCriteriaComponent,
   ],
-  imports: [CommonModule, FormsModule, YtRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    YtRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class YoutubeModule {}
